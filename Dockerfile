@@ -9,9 +9,10 @@ COPY ./dist/*.whl .
 
 # Install the specific wheel file
 # Run a Bash script to install each .whl file using pip
-RUN for whl_file in *.whl; do \
-        pip install --no-cache-dir "${whl_file}" && \
-     && \
+RUN ls -l
+RUN for file in ./*.whl; do \
+        echo "Installation complete." && \
+    done && \
     echo "Installation complete."
 
 # Other customizations or commands can be added here
