@@ -8,10 +8,6 @@ WORKDIR /usr/local/airflow
 COPY ./dist/*.whl .
 
 # Install the specific wheel file
-# Run a Bash script to install each .whl file using pip
-RUN for file in *.whl; do \
-        echo "${whl_file}" && \
-    done 
+RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
 # Other customizations or commands can be added here
-#test
