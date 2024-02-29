@@ -1,5 +1,5 @@
 # Use the official Apache Airflow image as the base image
-FROM apache/airflow:2.5.0-python3.7
+FROM apache/airflow:2.5.0-python3.8
 
 # Set the working directory to /usr/local/airflow
 WORKDIR /usr/local/airflow
