@@ -20,7 +20,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        py -m build 
+        python -m pip install build
+        python -m build .
 
     - name: Build and tag Docker image
       run: |
