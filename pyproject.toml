@@ -1,0 +1,55 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airflow-provider-cegid-sftp"
+authors = [
+    { name = "Pete DeJoy", email = "pete@astronomer.io" },
+    { name = "Josh Fell", email = "josh.d.fell@astronomer.io" },
+    { name = "Astronomer", email = "humans@astronomer.io" },
+
+]
+license = { text = "Apache License 2.0" }
+description = "A sample Apache Airflow provider package built by Astronomer."
+classifiers = [
+    "Framework :: Apache Airflow",
+    "Framework :: Apache Airflow :: Provider",
+]
+dynamic = [
+    "version"
+]
+requires-python = "~=3.8"
+dependencies = [
+    "apache-airflow>=2.4",
+    "paramiko>=2.8.0",
+    "apache-airflow-providers-ssh>=2.1.0",
+    "asyncssh>=2.12.0",
+    "apache-airflow-providers-sftp"
+]
+
+[project.urls]
+Homepage = "https://astronomer.io"
+Source = "https://github.com/astronomer/airflow-provider-sample/"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.entry-points.apache_airflow_provider]
+provider_info = "cegid_sftp.__init__:get_provider_info"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.dynamic]
+version = { attr = "cegid_sftp.__version__" }
+
+[tool.setuptools.packages.find]
+exclude = [
+    "*tests.*",
+    "*tests"
+]
