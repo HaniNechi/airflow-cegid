@@ -11,7 +11,7 @@ COPY ./dist/*.whl .
 # Run a Bash script to install each .whl file using pip
 RUN for whl_file in *.whl; do \
         pip install --no-cache-dir "${whl_file}" && \
-    done && \
+     && \
     echo "Installation complete."
 
 # Other customizations or commands can be added here
