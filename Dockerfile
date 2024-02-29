@@ -11,3 +11,4 @@ COPY ./dist/*.whl .
 RUN pip install --no-cache-dir *.whl
 
 # Other customizations or commands can be added here
+#test
