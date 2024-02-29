@@ -25,7 +25,7 @@ jobs:
 
     - name: Build and tag Docker image
       run: |
-        docker build -t Dockerfile airflow-cegid:latest .
+        docker build -t airflow-cegid:latest .
         docker tag airflow-cegid:latest airflowcegidarion.azurecr.io/airflow-cegid:latest
 
     - name: Log in to Azure Container Registry
