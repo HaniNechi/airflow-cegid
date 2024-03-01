@@ -32,7 +32,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     - name: Push Docker image to docker Container Registry
       run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/airflow-cegid:latest
