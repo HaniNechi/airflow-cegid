@@ -18,7 +18,7 @@ RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
 RUN pwd
 
-RUN w
+RUN whoami
 
 RUN chown airflow:root /opt/airflow/logs/
 
