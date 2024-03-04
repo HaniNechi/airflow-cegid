@@ -20,7 +20,7 @@ WORKDIR /opt/airflow/
 
 RUN pwd
 
-RUN whoami
+RUN ls 
 
 
 RUN chown airflow:root /logs
