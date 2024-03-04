@@ -8,8 +8,8 @@ WORKDIR /usr/local/airflow
 COPY ./dist/*.whl .
 
 #UPGRADE CRYPTOGRAPHY
-RUN pip uninstall -y cryptography
-RUN pip install --upgrade cryptography==36.0.2
+RUN pip uninstall -y openssl
+RUN pip install --upgrade openssl
 
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
