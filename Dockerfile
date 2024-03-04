@@ -16,5 +16,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
+RUN chown airflow:root /opt/airflow/logs/*
+
+RUN chown airflow:root /opt/airflow/dags/*
+
+RUN chown airflow:root /opt/airflow/files/*
 # Other customizations or commands can be added here
 # USER root
