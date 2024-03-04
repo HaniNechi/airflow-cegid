@@ -17,3 +17,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
 # Other customizations or commands can be added here
+USER root
