@@ -16,17 +16,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
-WORKDIR /opt/airflow/
+# Change the ownership of the log directory
+RUN chown -R airflow:root /opt/airflow/logs
 
-RUN pwd
+RUN chown -R airflow:root /opt/airflow/dags
 
-RUN ls 
-
-
-RUN chown airflow:root /logs
-
-RUN chown airflow:root /dags
-
-RUN chown airflow:root /files
 # Other customizations or commands can be added here
 # USER root
