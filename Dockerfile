@@ -18,6 +18,6 @@ RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
 WORKDIR /opt/airflow/
 
-RUN mkdir -p ./dags ./logs ./files \
-echo -e "AIRFLOW_UID=$(id -u)" > .env
+RUN mkdir -p ./dags ./logs ./files 
+RUN echo -e "AIRFLOW_UID=$(id -u)" > .env
 
