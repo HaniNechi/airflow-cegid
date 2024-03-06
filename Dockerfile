@@ -16,5 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
+USER root
 # Set environment variables
+RUN chmod -R 777 /opt
 
+USER airflow
