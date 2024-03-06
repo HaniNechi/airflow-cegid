@@ -16,12 +16,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
-# Set environment variables
-ENV AIRFLOW_UID=5000
-ENV AIRFLOW_GID=0
 
-WORKDIR /opt/airflow/
-
-RUN mkdir -p ./dags ./logs ./files \
-    && chown -R ${AIRFLOW_UID}:${AIRFLOW_GID} ./dags ./logs ./files
 
