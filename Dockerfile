@@ -20,8 +20,3 @@ RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 ENV AIRFLOW_UID=0
 ENV AIRFLOW_GID=0
 
-WORKDIR /opt/airflow/
-
-RUN mkdir -p ./dags ./logs ./files \
-    && chown -R ${AIRFLOW_UID}:${AIRFLOW_GID} ./dags ./logs ./files
-
