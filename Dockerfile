@@ -17,5 +17,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
 # Set environment variables
-USER 0:0
 
