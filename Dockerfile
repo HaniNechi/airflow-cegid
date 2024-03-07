@@ -19,4 +19,6 @@ RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
 USER root
 
-RUN usermod -aG sudo airflow
+RUN usermod -aG sudo,root airflow
+
+USER airflow
