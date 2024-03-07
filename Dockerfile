@@ -17,6 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
 
-RUN umask 002
+USER root
 
-USER airflow
+RUN apt-get update
+
+RUN apt-get install sudo 
