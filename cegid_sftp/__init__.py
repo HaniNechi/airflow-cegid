@@ -15,4 +15,3 @@ def get_provider_info():
         
         "versions": [__version__],  # Required
     }
-    
