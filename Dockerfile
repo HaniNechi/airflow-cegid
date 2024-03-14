@@ -5,6 +5,8 @@ USER root
 
 RUN apt update && apt-get install -y nano && apt-get install -y curl
 
+RUN pip install apache-airflow-providers-microsoft-azure
+
 USER airflow
 
 # Set the working directory to /usr/local/airflow
