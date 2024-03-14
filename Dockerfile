@@ -5,6 +5,7 @@ USER root
 
 WORKDIR /opt/airflow
 
+
 RUN apt update && apt-get install -y nano && apt-get install -y curl
 
 RUN mkdir /config 
