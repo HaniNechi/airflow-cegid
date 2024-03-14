@@ -7,7 +7,9 @@ WORKDIR /opt/airflow
 
 RUN apt update && apt-get install -y nano && apt-get install -y curl
 
-RUN mkdir config && touch __init__.py && touch log_config.py
+RUN mkdir /config 
+RUN touch /config/__init__.py 
+RUN touch /config/log_config.py
 
 RUN curl -o /config/log_config.py https://raw.githubusercontent.com/apache/airflow/main/airflow/config_templates/airflow_local_settings.py
 
