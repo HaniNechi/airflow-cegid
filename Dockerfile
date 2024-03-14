@@ -3,6 +3,8 @@ FROM apache/airflow:2.8.1-python3.8
 
 USER root
 
+RUN apt update && apt-get install -y nano && apt-get install -y curl
+
 USER airflow
 
 # Set the working directory to /usr/local/airflow
