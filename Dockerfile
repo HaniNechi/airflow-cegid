@@ -1,11 +1,7 @@
 # Use the official Apache Airflow image as the base image
 FROM apache/airflow:2.8.1-python3.8
+
 USER root
-
-RUN usermod -aG sudo,root airflow
-
-RUN umask 0002; \
-    mkdir -p ~/opt/airflow/logs
 
 USER airflow
 
