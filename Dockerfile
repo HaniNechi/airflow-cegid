@@ -5,8 +5,6 @@ USER root
 
 RUN apt update && apt-get install -y nano && apt-get install -y curl
 
-RUN pip install apache-airflow-providers-microsoft-azure
-
 USER airflow
 
 # Set the working directory to /usr/local/airflow
@@ -20,6 +18,7 @@ COPY ./requirements.txt .
 
 # Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install apache-airflow-providers-microsoft-azure
 
 # Install the specific wheel file
 RUN find . -name '*.whl' -type f -exec pip install --no-cache-dir {} +
