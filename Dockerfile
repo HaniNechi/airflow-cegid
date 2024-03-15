@@ -12,7 +12,7 @@ RUN mkdir /config
 RUN touch /config/__init__.py 
 RUN touch /config/log_config.py
 
-RUN cp /home/airflow/.local/lib/python3.8/site-packages/airflow/config_templates/airflow_local_settings.py config/log_config.py
+RUN cp /home/airflow/.local/lib/python3.8/site-packages/airflow/config_templates/airflow_local_settings.py /config/log_config.py
 
 COPY ./airflow.cfg .
 
