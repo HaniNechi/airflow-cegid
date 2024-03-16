@@ -16,6 +16,9 @@ RUN cp /home/airflow/.local/lib/python3.8/site-packages/airflow/config_templates
 
 RUN chmod 777 /config/log_config.py
 
+# Add the directory to the Python path
+ENV PYTHONPATH=/opt/airflow/config/:$PYTHONPATH
+
 COPY ./airflow.cfg .
 
 USER airflow
