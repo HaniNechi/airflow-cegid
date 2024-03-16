@@ -14,6 +14,8 @@ RUN touch /config/log_config.py
 
 RUN cp /home/airflow/.local/lib/python3.8/site-packages/airflow/config_templates/airflow_local_settings.py /config/log_config.py
 
+RUN chmod 777 /config/log_config.py
+
 COPY ./airflow.cfg .
 
 USER airflow
